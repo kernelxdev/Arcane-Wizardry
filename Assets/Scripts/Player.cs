@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+    
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
 
@@ -11,6 +13,9 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null) Destroy(this);
+        Instance = this;
+        
         rb = GetComponent<Rigidbody2D>();
     }
     
