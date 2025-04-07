@@ -21,6 +21,8 @@ public class Enemy : NPC
 
      void FollowTarget()
      {
+          // TODO IF SEEN TARGET AND IF IN RANGE
+          
           Vector2 moveDirection = (Vector2)target.position - rb.position;
           
           rb.linearVelocity = moveDirection.normalized * speed;
